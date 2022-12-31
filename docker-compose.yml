@@ -16,3 +16,25 @@ services:
       - XDEBUG_CLIENT_HOST=${XDEBUG_CLIENT_HOST}
       - XDEBUG_CLIENT_PORT=${XDEBUG_CLIENT_PORT}
       - XDEBUG_IDEKEY=${XDEBUG_IDEKEY}
+  web:
+    build: ./docker/nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - php-fpm-socket:/var/run/php-fpm
+      - ./:/app
+    depends_on:
+      - app
+      - db
+  db:
+    build: ./docker/mariadb
+    environment:
+      - MARIADB_DATABASE=unit_test_local
+      - MARIADB_ROOT_PASSWORD=secret
+    volumes:
+      - db-store:/var/lib/mysql
+    ports:
+      - "3306:3306"
+volumes:
+  db-store:
+  php-fpm-socket:
