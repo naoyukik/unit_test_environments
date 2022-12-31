@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
-      target: with_xdebug
+      target: with_debugger
     image: ${COMPOSE_PROJECT_NAME}:latest
     volumes:
       - ./:/app
