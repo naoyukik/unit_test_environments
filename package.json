@@ -1,6 +1,6 @@
 {
-  "name": "custom-rules-for-static-code-analysis",
-  "version": "1.1.0",
+  "name": "unit-test-environments",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
