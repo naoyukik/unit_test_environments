@@ -4,3 +4,5 @@ phpcs:
 	docker compose -f ./docker-compose.yml exec -T app vendor/bin/phpcs --standard=./phpcs.rulesets.xml ./src/PhpSample.php
 phpmd:
 	docker compose -f ./docker-compose.yml exec -T app vendor/bin/phpmd ./src/PhpSample.php text ./phpmd.rulesets.xml
+clear_cache:
+	docker compose -f ./docker-compose.yml exec -T app composer dump-autoload
