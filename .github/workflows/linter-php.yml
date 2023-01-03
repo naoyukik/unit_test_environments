@@ -5,7 +5,7 @@ on:
 
 jobs:
   PHP_CodeSniffer:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - run: ls -la  /usr/bin/php*
       - name: Setup PHP 8.2
