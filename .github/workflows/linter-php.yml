@@ -7,6 +7,7 @@ jobs:
   PHP_CodeSniffer:
     runs-on: ubuntu-latest
     steps:
+      - run: ls -la  /usr/bin/php*
       - name: Setup PHP 8.2
         run: sudo update-alternatives --set php /usr/bin/php8.2
       - uses: actions/checkout@v3
