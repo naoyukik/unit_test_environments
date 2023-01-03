@@ -5,8 +5,10 @@ on:
 
 jobs:
   PHP_CodeSniffer:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
+      - name: Setup PHP 8.2
+        run: sudo update-alternatives --set php /usr/bin/php8.2
       - uses: actions/checkout@v3
       - name: Run Composer Install
         run: composer install
@@ -18,16 +20,20 @@ jobs:
         run: |
           ./bin/reviewdog -conf=./.reviewdog.yml -reporter=github-check
   Psalm:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
+      - name: Setup PHP 8.2
+        run: sudo update-alternatives --set php /usr/bin/php8.2
       - uses: actions/checkout@v3
       - name: Run Composer Install
         run: composer install
       - name: Run Psalm
         run: ./vendor/bin/psalm --output-format=github --no-cache || true
   PHP_Mess_Detector:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
+      - name: Setup PHP 8.2
+        run: sudo update-alternatives --set php /usr/bin/php8.2
       - uses: actions/checkout@v3
       - name: Run Composer Install
         run: composer install

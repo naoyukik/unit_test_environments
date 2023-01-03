@@ -5,7 +5,9 @@
   "scripts": {
     "lint": "eslint '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
     "lint:sarif": "eslint -f @microsoft/eslint-formatter-sarif -o eslint_results.sarif '{src/**/*,*}.{js,ts,jsx,tsx,vue}'",
-    "textlint": "textlint -f compact src/**/*.md"
+    "textlint": "textlint -f compact src/**/*.md",
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [
     "ESLint",
@@ -33,6 +35,11 @@
     "textlint-rule-ja-no-weak-phrase": "^2.0.0",
     "textlint-rule-preset-jtf-style": "^2.3.13",
     "textlint-rule-prh": "^5.3.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "axios": "^1.1.2",
+    "laravel-vite-plugin": "^0.7.2",
+    "lodash": "^4.17.19",
+    "postcss": "^8.1.14",
+    "vite": "^4.0.0"
   }
 }

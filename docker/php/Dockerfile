@@ -33,7 +33,7 @@ WORKDIR /app
 
 FROM base_php as composer_install
 
-ADD composer.json /app/composer.json
+ADD . /app/
 RUN composer install
 RUN cp /app/composer.json /tmp/composer.json
 RUN cp /app/composer.lock /tmp/composer.lock
